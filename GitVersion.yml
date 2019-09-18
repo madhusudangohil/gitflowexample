@@ -1,7 +1,8 @@
 branches:
   master:
     mode: ContinuousDelivery
-    increment: Inherit
+    tag: ''
+    increment: Patch
     track-merge-target: true
     is-release-branch: true
   develop:
