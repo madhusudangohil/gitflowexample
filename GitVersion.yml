@@ -1,19 +1,29 @@
+next-version: 1.0
+tag-prefix: '[vV]'
 branches:
   master:
-    mode: ContinuousDelivery
+    regex: master
     tag: ''
+    mode: ContinuousDelivery
     increment: Patch
-    track-merge-target: true
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
     is-release-branch: true
   develop:
     regex: development
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     tag: alpha
-    increment: Patch
+    increment: Minor
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: true
   feature:
-    regex: feature?[/-]
-    mode: ContinuousDelivery
+    regex: f(eatures)?[-/]
+    mode: ContinuousDeployment
     tag: alpha
-    increment: Inherit
+    increment: Minor
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: false
+    tracks-release-branches: false
+    is-release-branch: false
 ignore:
   sha: []
