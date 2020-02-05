@@ -3,7 +3,7 @@ branches:
   master:
     mode: ContinuousDelivery
     increment: Patch
-    regex: master
+    regex: ^master
   develop:
     mode: ContinuousDeployment
     tag: unstable    
